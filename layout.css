@@ -1,1 +1,34 @@
+/*------------------Generel reset----------------*/
+body {
+    margin: 0;
+    padding: 0;
+}
+
 /*------------------Header----------------*/
+header {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.header li {
+    list-style: none;
+}
+
+.header a {
+    text-decoration: none;
+    color: white;
+    font-size: 4rem;
+    font-family: "Bebas Neue", serif;
+    font-weight: 400;
+    font-style: normal;
+    transition: color 0.3s;
+}
+
+.header a:hover {
+    transform: scale(1.2);
+    color: gray; 
+}
