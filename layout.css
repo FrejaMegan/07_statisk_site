@@ -32,3 +32,165 @@ header {
     transform: scale(1.2);
     color: gray; 
 }
+
+/*------------------Main----------------*/
+ 
+body {
+    font-family: "Bebas Neue", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+}
+
+
+.forside {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh; 
+    text-align: center;
+}
+
+.forside img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(50%);
+    z-index: -1;
+}
+
+.forside_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* Lidt afstand mellem tekst og knap */
+    color: white;
+}
+
+.forside h2 {
+    font-size: 2rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+    color: white;
+}
+
+.shop_now a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.shop_now a:hover {
+    background-color: grey;
+}
+
+/* Gør layoutet mere responsivt */
+@media (min-width: 800px) {
+    .forside {
+        height: 60vh;
+    }
+
+    .forside h2 {
+        font-size: 2.5rem;
+    }
+
+    .shop_now a {
+        font-size: 1.2rem;
+        padding: 12px 25px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .forside {
+        height: 70vh;
+    }
+
+    .forside h2 {
+        font-size: 3rem;
+    }
+
+    .forside img {
+        width: 90%; 
+        max-width: 1200px; 
+    }
+}
+
+
+/*---------------Kategorier----------*/
+.category_list_container {
+    text-align: center;
+    padding: 20px;
+}
+
+.category_grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px;
+    padding: 20px;
+}
+
+.category_box {
+    background-color: black;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.category_box a {
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    font-weight: 400;
+}
+
+.category_box a:hover {
+    color: grey;
+}
+
+/*--- Desktop version: Mindre kasser og fire kolonner ---*/
+@media (min-width: 800px) {
+    .category_list_container h2{
+        font-size: 3rem;
+    }
+    .category_grid {
+        grid-template-columns: repeat(2, minmax); 
+        max-width: 500px; /* Forhindrer at kasserne fylder hele skærmen */
+        margin: 0 auto; /* Centrerer gridet */
+    }
+
+    .category_box {
+        width: 150px; /* Begrænser hvor brede kasserne kan blive */
+        margin: 0 auto; /* Centrerer kasserne i deres kolonne */
+    }
+
+    .category_box {
+        padding: 30px; 
+        margin: 0 auto;
+    }
+
+    .category_box a {
+        font-size: 2.5rem; 
+    }
+
+    
+}
+
+
+    
+
+    
+
+
+
+
+
