@@ -1,7 +1,9 @@
 /*------------------Generel reset----------------*/
 body {
+    height: 100%;
     margin: 0;
-    padding: 0;
+    display: flex;
+    flex-direction: column
 }
 
 /*------------------Header----------------*/
@@ -157,20 +159,20 @@ body {
     color: grey;
 }
 
-/*--- Desktop version: Mindre kasser og fire kolonner ---*/
+/*--- Desktop version---*/
 @media (min-width: 800px) {
     .category_list_container h2{
         font-size: 3rem;
     }
     .category_grid {
         grid-template-columns: repeat(2, minmax); 
-        max-width: 500px; /* Forhindrer at kasserne fylder hele skærmen */
-        margin: 0 auto; /* Centrerer gridet */
+        max-width: 500px; 
+        margin: 0 auto; 
     }
 
     .category_box {
-        width: 150px; /* Begrænser hvor brede kasserne kan blive */
-        margin: 0 auto; /* Centrerer kasserne i deres kolonne */
+        width: 150px; 
+        margin: 0 auto; 
     }
 
     .category_box {
@@ -185,12 +187,97 @@ body {
     
 }
 
+/*---------- Footer-------------*/
 
+section {
+    padding: 80px 13% 70px;
+    flex: 1;
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3.5rem;
+    background-color: #bcbcbc;
+    padding: 50px 10%;  
+    margin-top: 50px;  
+    text-align: left;
+}
+
+.footer-content h4{
+    color: black;
+    margin-bottom: 1.5rem;
+    font-size: 20px;
     
+}
 
-    
+.footer-content li {
+    list-style-type: none;
+    margin-bottom: 16px;
+    text-decoration: none;
+}
 
+.footer-content li a {
+    display: block;
+    color: black;
+    font-size: 1rem;
+    font-weight: 400;
+    transition: all .40s ease;
+    text-decoration: none;
+}
 
+.footer-content li a:hover {
+    transform: translate(-3px ) translate(-5px);
+    color: black;
+}
 
+.footer-content p{
+    color: black;
+    font-size: 1rem;
+    line-height: 30px;
+    margin: 20px 0;
+}
 
+form input{
+    width: 200px;
+    height: 40px;
+    border-radius: 4px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    outline: none;
+    border: none;
+}
+
+form button {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    border-radius:  30px;
+    padding: 10px 30px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+@media (max-width: 1690px) {
+    section {
+        padding: 50px 5% 40px;
+    }
+}
+
+@media (max-width: 1120px) {
+    .footer {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .footer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+    }
+}
 
