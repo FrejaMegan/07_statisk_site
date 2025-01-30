@@ -35,6 +35,12 @@ header {
     color: gray; 
 }
 
+/*Spejlvender R'et*/
+.flipped {
+    display: inline-block; 
+    transform: scaleX(-1); 
+}
+
 /*------------------Main----------------*/
  
 body {
@@ -408,8 +414,9 @@ a {
     }
 
     .product-info {
-        width: 45%;
+        width: 50%;
     }
+
 
     .product-title {
         font-size: 2.2rem;
