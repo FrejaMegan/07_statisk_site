@@ -35,6 +35,12 @@ header {
     color: gray; 
 }
 
+/*Spejlvender R'et*/
+.flipped {
+    display: inline-block; 
+    transform: scaleX(-1); 
+}
+
 /*------------------Main----------------*/
  
 body {
