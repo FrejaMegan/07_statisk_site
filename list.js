@@ -16,15 +16,30 @@ function showList(products) {
     .map(
       (product) => `
       <div class="product_card"> 
-        <a href="produkt.html">
-          <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="${product.productdisplayname}">
+        <a href="produkt.html?id=${product.id}">
+          <div class="product-image-wrapper ${product.soldout === 1 ? "soldout" : ""}">
+            <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="${product.productdisplayname}">
+          </div>
         </a>
         ${product.discount ? `<div class="discount-badge">${product.discount}% OFF</div>` : ""}
 
+        <!-- Udsolgt Badge -->
+        ${product.soldout === 1 ? `<div class="soldout-badge">Udsolgt</div>` : ""}
+
+        <p class="product_name">${product.productdisplayname}</p>
         <p class="product_price">${product.price} DKK</p>
+
+        <button class="add_to_cart" data-id="${product.id}" ${product.soldout === 1 ? "disabled" : ""}>Læg i kurv</button>
       </div>
   `
     )
     .join("");
   productContainer.innerHTML = markup;
+
+  document.querySelectorAll(".add_to_cart").forEach((button) => {
+    button.addEventListener("click", (event) => {
+      const productId = event.target.dataset.id;
+      console.log(`Produkt ${productId} tilføjet til kurv!`);
+    });
+  });
 }
