@@ -1,14 +1,18 @@
-const myCategory = new URLSearchParams(window.location.search).get("category");
+const mySeason = new URLSearchParams(window.location.search).get("season");
 const productContainer = document.querySelector(".product_list_container");
+const overskrift = document.querySelector("h1");
 
-fetch(`https://kea-alt-del.dk/t7/api/products?${myCategory}`)
+overskrift.innerHTML = mySeason;
+
+fetch(`https://kea-alt-del.dk/t7/api/products/?season=${mySeason}`)
   .then((response) => response.json())
-  .then((products) => showList(products));
+  .then((data) => showList(data));
 
 function showList(products) {
   console.log("Fetched products:", products);
 
-  const markup = products
+  let markup = "";
+  markup = products
     .map(
       (product) => `
       <div class="product_card"> 
@@ -22,8 +26,5 @@ function showList(products) {
   `
     )
     .join("");
-    console.log(markup);
-    productContainer.innerHTML = markup;
+  productContainer.innerHTML = markup;
 }
-
-
