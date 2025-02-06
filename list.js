@@ -23,7 +23,6 @@ function showList(products) {
         </a>
         ${product.discount ? `<div class="discount-badge">${product.discount}% OFF</div>` : ""}
 
-        <!-- Udsolgt Badge -->
         ${product.soldout === 1 ? `<div class="soldout-badge">Udsolgt</div>` : ""}
 
         <p class="product_name">${product.productdisplayname}</p>
