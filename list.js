@@ -4,7 +4,7 @@ const overskrift = document.querySelector("h1");
 
 overskrift.innerHTML = mySeason;
 
-fetch(`https://kea-alt-del.dk/t7/api/products/?season=${mySeason}`)
+fetch(`https://kea-alt-del.dk/t7/api/products/?season=${mySeason}&limit=100`)
   .then((response) => response.json())
   .then((data) => showList(data));
 
