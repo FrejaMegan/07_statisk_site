@@ -28,7 +28,7 @@ function showList(products) {
         <p class="product_name">${product.productdisplayname}</p>
         <p class="product_price">${product.price} DKK</p>
 
-        <button class="add_to_cart" data-id="${product.id}" ${product.soldout === 1 ? "disabled" : ""}>Læg i kurv</button>
+        <button class="add_to_cart" data-id="${product.id}" ${product.soldout === 1 ? "disabled" : ""}>Add to Cart</button>
       </div>
   `
     )
